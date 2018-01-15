@@ -1,26 +1,10 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.default = ImgIcon;
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style/index.css';
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-require('./style/index.less');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function ImgIcon(_ref) {
+export default function ImgIcon(_ref) {
   var prefixCls = _ref.prefixCls,
       img = _ref.img,
       size = _ref.size;
@@ -39,7 +23,7 @@ function ImgIcon(_ref) {
     }
   }
 
-  return _react2.default.createElement('i', {
+  return React.createElement('i', {
     className: '' + prefixCls,
     style: _extends({
       backgroundImage: 'url(' + img + ')'
@@ -58,10 +42,10 @@ ImgIcon.defaultProps = {
 };
 
 ImgIcon.propTypes = {
-  prefixCls: _propTypes2.default.string,
-  size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
-    width: _propTypes2.default.string.isRequired,
-    height: _propTypes2.default.string.isRequired
+  prefixCls: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired
   })]),
-  img: _propTypes2.default.string.isRequired
+  img: PropTypes.string.isRequired
 };
