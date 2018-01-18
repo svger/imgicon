@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style/index.less';
+import styled from 'styled-components';
 
-export default function ImgIcon({
-  prefixCls, img, size
+function ImgIcon({
+  prefixCls, className, img, size
 }) {
   let iconStyle = {
     backgroundImage: `url(${img})`
@@ -21,7 +21,7 @@ export default function ImgIcon({
 
   return (
     <i
-      className={`${prefixCls}`}
+      className={`${prefixCls} ${className}`}
       style={{
         backgroundImage: `url(${img})`,
         ...iconStyle
@@ -42,6 +42,7 @@ ImgIcon.defaultProps = {
 
 ImgIcon.propTypes = {
   prefixCls: PropTypes.string,
+  className: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
@@ -51,3 +52,13 @@ ImgIcon.propTypes = {
   ]),
   img: PropTypes.string.isRequired
 }
+
+export default styled(ImgIcon)`
+  &.${defaultPrefixCls} {
+    display: inline-block;
+    font-size: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+`;

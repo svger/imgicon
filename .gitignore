@@ -6,3 +6,6 @@
 node_modules
 demo/static/
 yarn-error.log
+build
+es
+lib

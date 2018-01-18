@@ -1,8 +1,8 @@
 import React from 'react';
 import ImgIcon from '../src';
 
-const IMG_BUY = require('./img/white/buy.png');
-const IMG_SELL = require('./img/white/sell.png');
+import IMG_BUY from './img/white/buy.png';
+import IMG_SELL from './img/white/sell.png';
 
 class App extends React.Component {
 
